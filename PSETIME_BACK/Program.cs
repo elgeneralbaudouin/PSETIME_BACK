@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
