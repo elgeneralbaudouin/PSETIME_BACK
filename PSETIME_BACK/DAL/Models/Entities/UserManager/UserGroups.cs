@@ -13,6 +13,8 @@ namespace PSETIME_BACK.DAL.Models.Entities.UserManager
     ///     de regrouper toutes les utilisateur d un secteur particulier sur lequelle 
     ///     devrai apparaitre des config globle
     /// </summary>
+    /// 
+    [Table("adm_t_group_user")]
     public class UserGroups : BaseEntity
     {
         /// <summary>
