@@ -20,5 +20,6 @@ namespace PSETIME_BACK.DAL.DAOs.ImplDAO.GlobalConfigs
         {
 
         }
+
     }
 }

@@ -129,7 +129,7 @@ namespace PSETIME_BACK.DAL.DAOs.RepositoryPattern
         /// <returns>IEnumerable containing the resulting entity set.</returns>
         public System.Collections.Generic.IEnumerable<T> GetByQuery(Expression<Func<T, bool>> query = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
         {
-            IQueryable<T> queryResult = null;
+            IQueryable<T> queryResult = _DbSet;
             
             //If there is a query, execute it against the dbset
             if (query != null)
