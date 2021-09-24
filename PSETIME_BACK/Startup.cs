@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PSETIME_BACK.Configurations;
 using PSETIME_BACK.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,8 @@ namespace PSETIME_BACK
         {
             // application DB context adding 
             services.AddDbContext<ApplicationDBContext>();
-
+            services.AddBaseDAO();
+            services.AddBaseServices();
 
             services.AddControllers();
         }
