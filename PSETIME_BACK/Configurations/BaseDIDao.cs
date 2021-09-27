@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PSETIME_BACK.DAL.DAOs.IDAO.GlobalConfigs;
+using PSETIME_BACK.DAL.DAOs.IDAO.Imports;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.GlobalConfigs;
+using PSETIME_BACK.DAL.DAOs.ImplDAO.Imports.NewFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,9 @@ namespace PSETIME_BACK.Configurations
             services.AddScoped<IGlobalConfigsDao, GlobalConfigsDao>();
             #endregion
 
+            #region Importation
+            services.AddScoped<IImportationDao, ImportationDao>();
+            #endregion
             return services;
         }
 

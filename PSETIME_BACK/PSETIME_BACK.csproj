@@ -20,22 +20,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BussinessLogic\ImplService\Imports\" />
     <Folder Include="BussinessLogic\ImplService\RevendPerms\" />
     <Folder Include="BussinessLogic\ImplService\UserManager\" />
-    <Folder Include="BussinessLogic\IService\Imports\" />
     <Folder Include="BussinessLogic\IService\RevendPerms\" />
     <Folder Include="BussinessLogic\IService\UserManager\" />
-    <Folder Include="Controllers\Imports\" />
     <Folder Include="Controllers\RevendPerms\" />
     <Folder Include="Controllers\UserManager\" />
-    <Folder Include="DAL\DAOs\IDAO\Imports\" />
     <Folder Include="DAL\DAOs\IDAO\RevendPerms\" />
     <Folder Include="DAL\DAOs\IDAO\UserManager\" />
-    <Folder Include="DAL\DAOs\ImplDAO\Imports\" />
     <Folder Include="DAL\DAOs\ImplDAO\RevendPerms\" />
     <Folder Include="DAL\DAOs\ImplDAO\UserManager\" />
-    <Folder Include="DAL\Models\Entities\Imports\" />
     <Folder Include="DAL\Models\Entities\RevendPerms\" />
     <Folder Include="DTO\VBM\" />
     <Folder Include="DTO\VM\" />
