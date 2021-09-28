@@ -30,7 +30,7 @@ namespace PSETIME_BACK.DAL.Models
 
 
         #region Importation
-        public DbSet<ImportTimeUser> ImportTimeUsers { get; set; }
+        public DbSet<UserTime> ImportTimeUsers { get; set; }
 
         #endregion
 
@@ -57,12 +57,6 @@ namespace PSETIME_BACK.DAL.Models
                 new GlobalConfig { Id = 1, Code = "GC1", Description = "CONFIGURATION GLOABLE 1", Name = "CONFIGURATION GLOABLE 1", StartDate = new DateTime(2021, 01, 01, 9, 0, 0), EndDate = new DateTime( 2021, 01, 01, 18, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
                 new GlobalConfig { Id = 2, Code = "GC2", Description = "CONFIGURATION GLOABLE 2", Name = "CONFIGURATION GLOABLE 2", StartDate = new DateTime(2021, 01, 01, 8, 0, 0), EndDate = new DateTime(2021, 01, 01, 18, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
                 new GlobalConfig { Id = 3, Code = "GC3", Description = "CONFIGURATION GLOABLE 3", Name = "CONFIGURATION GLOABLE 3", StartDate = new DateTime(2021, 01, 01, 7, 30, 0), EndDate = new DateTime(2021, 01, 01, 18, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" }
-                ); 
-
-            modelBuilder.Entity<ImportTimeUser>().HasData(
-                new ImportTimeUser { Id = 1, Code = "SEM1", Description = "LES JOURS DE LA SEMAINE", Name = "PREMIER JOUR DE LA SEMAINE", WorkDay = new DateTime(2021, 01, 01, 9, 0, 0), TimeWorkBack = new DateTime(2021, 01, 01, 9, 0, 0), TimeWorkCome = new DateTime(2021, 01, 01, 18, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
-                new ImportTimeUser { Id = 2, Code = "SEM2", Description = "LES JOURS DE LA SEMAINE", Name = "DEUXIEME JOUR DE LA SEMAINE", WorkDay = new DateTime(2021, 01, 01, 8, 0, 0), TimeWorkCome = new DateTime(2021, 01, 01, 18, 0, 0), TimeWorkBack = new DateTime(2021, 01, 01, 9, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
-                new ImportTimeUser { Id = 3, Code = "SEM3", Description = "LES JOURS DE LA SEMAINE", Name = "TROISIEME JOUR DE LA SEMAINE", WorkDay = new DateTime(2021, 01, 01, 7, 30, 0), TimeWorkCome = new DateTime(2021, 01, 01, 18, 0, 0), TimeWorkBack = new DateTime(2021, 01, 01, 9, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" }
                 );
         }
 

@@ -24,7 +24,7 @@ namespace PSETIME_BACK.Configurations
             #endregion
 
             #region Importation
-            services.AddScoped<IImportationDao, ImportationDao>();
+            services.AddScoped<IUserTimeDao, UserTimeDao>();
             #endregion
             return services;
         }

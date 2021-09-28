@@ -8,6 +8,6 @@ namespace PSETIME_BACK.BussinessLogic.IService.Imports
 {
     public interface IImportationServices
     {
-        List<ImportTimeUser> GetAll(bool IsActive = true);
+        List<UserTime> GetAll(bool IsActive = true);
     }
 }

@@ -8,19 +8,26 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK.BussinessLogic.ImplService.Imports
 {
-    public class ImportationServices : IImportationServices
+    /// <summary>
+    ///     import services
+    /// </summary>
+    public class ImportServices : IImportServices
     {
 
         // DI
-        private readonly IImportationDao _importationDao;
+        private readonly IUserTimeDao _importationDao;
 
-        public ImportationServices(IImportationDao importationDao)
+        public ImportServices(IUserTimeDao importationDao)
         {
             _importationDao = importationDao;
         }
 
-
-        public List<ImportTimeUser> GetAll (bool IsActive = true) 
+        /// <summary>
+        ///     get all usertime by state 
+        /// </summary>
+        /// <param name="IsActive">if entry is in good state</param>
+        /// <returns></returns>
+        public List<UserTime> GetAll (bool IsActive = true) 
         {
             var response = _importationDao.GetAll(IsActive);
             return response;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.DAOs.IDAO.Imports
 {
-    public interface IImportationDao : IRepository<ImportTimeUser>
+    public interface IUserTimeDao : IRepository<UserTime>
     {
     }
 }

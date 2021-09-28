@@ -15,11 +15,8 @@ namespace PSETIME_BACK.DAL.Models.Entities.UserTimeImport
     ///
 
     [Table("Import_t_user_Import")]
-    public class ImportTimeUser : BaseEntity
+    public class UserTime : BaseEntity
     {
-
-        [Column("jour")]
-        public DateTime WorkDay { get; set; }
 
         [Column("heure_d_arrive")]
         public DateTime TimeWorkCome { get; set; }
@@ -35,6 +32,6 @@ namespace PSETIME_BACK.DAL.Models.Entities.UserTimeImport
         /// 
 
         //[JsonIgnore]
-        //public virtual UserManager UserManager { get; set; }
+        //public virtual Users User { get; set; }
     }
 }

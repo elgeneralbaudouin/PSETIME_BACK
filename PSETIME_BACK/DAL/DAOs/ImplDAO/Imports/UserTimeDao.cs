@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.DAOs.ImplDAO.Imports.NewFolder
 {
-    public class ImportationDao : Repository<ImportTimeUser>, IImportationDao
+    /// <summary>
+    /// classe de d'access a donnée du model UserTime
+    /// </summary>
+    public class UserTimeDao : Repository<UserTime>, IUserTimeDao
     {
 
         /// <summary>
         ///     Constructeur par default
         /// </summary>
-        public ImportationDao() : base(Ctx)
+        public UserTimeDao() : base(Ctx)
         {
 
         }
