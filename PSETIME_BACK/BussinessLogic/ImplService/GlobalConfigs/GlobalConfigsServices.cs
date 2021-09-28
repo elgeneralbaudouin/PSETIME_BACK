@@ -1,6 +1,9 @@
 ﻿using PSETIME_BACK.BussinessLogic.IService.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.IDAO.GlobalConfigs;
 using PSETIME_BACK.DAL.Models.Entities.GlobalConfigs;
+using PSETIME_BACK.DTO.VM;
+using PSETIME_BACK.DTO.VM.GlobalConfigs;
+using PSETIME_BACK.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +24,41 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs
             _globalConfigsDao = globalConfigsDao;
         }
 
-        public List<GlobalConfig> GetAll (bool IsActive = true) 
+        public Response<List<GlobalConfigsVM>> GetAll (bool IsActive = true) 
         {
-            var response = _globalConfigsDao.GetAll(IsActive);
-            return response;
+            String message = MsgUtils.OK;
+            String stackTrace = String.Empty;
+            Int32 total = 0;
+
+            var respVm = new List<GlobalConfigsVM>();
+
+            try
+            {
+                var resp = _globalConfigsDao.GetAll(IsActive);
+                if (resp == null)
+                {
+                    return new Response<List<GlobalConfigsVM>>()
+                    {
+                        Success = true,
+                        Message = MsgUtils.NO_DATA
+                    };
+                }
+                respVm = resp.ToVMs();
+                total = respVm.Count;
+            }
+            catch (Exception e)
+            {
+                message = e.StackTrace;
+                if (e.InnerException != null)
+                {
+                    message = e.InnerException.Message;
+                }
+
+                stackTrace = e.StackTrace;
+
+            }
+
+            return new Response<List<GlobalConfigsVM>>() {  Data = respVm, Total = total, Success = message.Equals(MsgUtils.OK), Message = MsgUtils.OK, StackTrace = stackTrace };
         }
     }
 }

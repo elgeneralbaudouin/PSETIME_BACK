@@ -32,8 +32,6 @@
     <Folder Include="DAL\DAOs\ImplDAO\UserManager\" />
     <Folder Include="DAL\Models\Entities\RevendPerms\" />
     <Folder Include="DTO\VBM\" />
-    <Folder Include="DTO\VM\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
 
 

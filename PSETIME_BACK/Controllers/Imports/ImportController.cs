@@ -13,9 +13,9 @@ namespace PSETIME_BACK.Controllers.Imports
     public class ImportationController : Controller
     {
 
-        private readonly IImportationServices _importationServices;
+        private readonly IImportServices _importationServices;
 
-        public ImportationController(IImportationServices importationServices)
+        public ImportationController(IImportServices importationServices)
         {
             _importationServices = importationServices;
         }

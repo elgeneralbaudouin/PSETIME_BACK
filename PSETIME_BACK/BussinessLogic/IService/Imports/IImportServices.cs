@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK.BussinessLogic.IService.Imports
 {
-    public interface IImportationServices
+    public interface IImportServices
     {
         List<UserTime> GetAll(bool IsActive = true);
     }

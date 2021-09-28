@@ -19,7 +19,7 @@ namespace PSETIME_BACK.Configurations
             #endregion
 
             #region Importation
-            services.AddScoped<IImportationServices, ImportServices>();
+            services.AddScoped<IImportServices, ImportServices>();
             #endregion
             return services;
         }
