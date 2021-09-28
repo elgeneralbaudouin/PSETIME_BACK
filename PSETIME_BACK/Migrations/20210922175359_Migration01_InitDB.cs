@@ -62,7 +62,40 @@ namespace PSETIME_BACK.Migrations
                 table: "UserGroups",
                 column: "config_id",
                 unique: true);
+
+            ///les lignes du haut devra etre ajouter apres la creation des utilisateurs
+            
+            ///Migration pour la table horaire 
+            
+            migrationBuilder.CreateTable(
+             name: "ImportTimeUser",
+             columns: table => new
+             {
+                 Id = table.Column<int>(nullable: false)
+                     .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                 Description = table.Column<string>(maxLength: 100, nullable: true),
+                 Code = table.Column<string>(maxLength: 100, nullable: true),
+                 Name = table.Column<string>(maxLength: 100, nullable: true),
+                 CreatedBy = table.Column<string>(maxLength: 100, nullable: true),
+                 UpdatedBy = table.Column<string>(maxLength: 100, nullable: true),
+                 CreatedAt = table.Column<DateTime>(nullable: false),
+                 UpdatedAt = table.Column<DateTime>(nullable: false),
+                 IsActive = table.Column<bool>(nullable: false),
+                 jour = table.Column<DateTime>(nullable: false),
+                 heure_d_arrive = table.Column<DateTime>(nullable: false),
+                 heure_de_depart = table.Column<DateTime>(nullable: false)
+             },
+             constraints: table =>
+             {
+                 table.PrimaryKey("PK_ImportTimeUser", x => x.Id);
+             });
+
+
+
+
         }
+
+
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
@@ -71,6 +104,9 @@ namespace PSETIME_BACK.Migrations
 
             migrationBuilder.DropTable(
                 name: "GlobalConfigs");
+
+            migrationBuilder.DropTable(
+                name: "ImportTimeUser");
         }
     }
 }

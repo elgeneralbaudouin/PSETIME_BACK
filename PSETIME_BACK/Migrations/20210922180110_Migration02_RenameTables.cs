@@ -18,6 +18,10 @@ namespace PSETIME_BACK.Migrations
                 name: "PK_GlobalConfigs",
                 table: "GlobalConfigs");
 
+            migrationBuilder.DropPrimaryKey(
+                name: "PK_ImportTimeUser",
+                table: "ImportTimeUser");
+
             migrationBuilder.RenameTable(
                 name: "UserGroups",
                 newName: "adm_t_group_user");
@@ -25,6 +29,10 @@ namespace PSETIME_BACK.Migrations
             migrationBuilder.RenameTable(
                 name: "GlobalConfigs",
                 newName: "config_t_global_config");
+
+            migrationBuilder.RenameTable(
+              name: "ImportTimeUser",
+              newName: "Import_t_user_Import");
 
             migrationBuilder.RenameIndex(
                 name: "IX_UserGroups_config_id",
@@ -40,6 +48,15 @@ namespace PSETIME_BACK.Migrations
                 name: "PK_config_t_global_config",
                 table: "config_t_global_config",
                 column: "Id");
+
+            migrationBuilder.AddPrimaryKey(
+                name: "PK_Import_t_user_Import",
+                table: "Import_t_user_Import",
+                column: "Id");
+
+            ///je  ne peux pas encore faire de migrations 
+            ///car le modules 
+            ///des utilisateurs n'est pas encore creer
 
             migrationBuilder.AddForeignKey(
                 name: "FK_adm_t_group_user_config_t_global_config_config_id",
@@ -64,6 +81,14 @@ namespace PSETIME_BACK.Migrations
                 name: "PK_adm_t_group_user",
                 table: "adm_t_group_user");
 
+            migrationBuilder.DropPrimaryKey(
+               name: "PK_Import_t_user_Import",
+               table: "Import_t_user_Import");
+
+            migrationBuilder.RenameTable(
+                name: "Import_t_user_Import",
+                newName: "ImportTimeUser");
+
             migrationBuilder.RenameTable(
                 name: "config_t_global_config",
                 newName: "GlobalConfigs");
@@ -79,12 +104,17 @@ namespace PSETIME_BACK.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_GlobalConfigs",
-                table: "GlobalConfigs",
+                table: "GlobalConfigs", 
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_UserGroups",
                 table: "UserGroups",
+                column: "Id");
+
+            migrationBuilder.AddPrimaryKey(
+                name: "PK_ImportTimeUser",
+                table: "ImportTimeUser",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(

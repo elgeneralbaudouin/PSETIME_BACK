@@ -112,6 +112,109 @@ namespace PSETIME_BACK.Migrations
                         });
                 });
 
+
+            modelBuilder.Entity("PSETIME_BACK.DAL.Models.Entities.UserTimeImport.UserTimeImport", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("integer")
+                    .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                b.Property<string>("Code")
+                    .HasColumnType("character varying(100)")
+                    .HasMaxLength(100);
+
+                b.Property<DateTime>("CreatedAt")
+                    .HasColumnType("timestamp without time zone");
+
+                b.Property<string>("CreatedBy")
+                    .HasColumnType("character varying(100)")
+                    .HasMaxLength(100);
+
+                b.Property<string>("Description")
+                    .HasColumnType("character varying(100)")
+                    .HasMaxLength(100);
+
+                b.Property<DateTime>("TimeWorkBack")
+                    .HasColumnName("heure_de_depart")
+                    .HasColumnType("timestamp without time zone");
+
+                b.Property<bool>("IsActive")
+                    .HasColumnType("boolean");
+
+                b.Property<string>("Name")
+                    .HasColumnType("character varying(100)")
+                    .HasMaxLength(100);
+
+                b.Property<DateTime>("TimeWorkCome")
+                    .HasColumnName("heure_d_arrive")
+                    .HasColumnType("timestamp without time zone");
+
+                b.Property<DateTime>("UpdatedAt")
+                    .HasColumnType("timestamp without time zone");
+
+                b.Property<string>("UpdatedBy")
+                    .HasColumnType("character varying(100)")
+                    .HasMaxLength(100);
+
+                b.Property<DateTime>("WorkDay")
+                   .HasColumnName("jour")
+                   .HasColumnType("timestamp without time zone");
+
+                b.HasKey("Id");
+
+                b.ToTable("Import_t_user_Import");
+
+                b.HasData(
+                    new
+                    {
+                        Id = 1,
+                        Code = "GC1",
+                        CreatedAt = new DateTime(2021, 9, 24, 16, 40, 46, 696, DateTimeKind.Local).AddTicks(2498),
+                        CreatedBy = "1",
+                        Description = "CONFIGURATION GLOABLE 1",
+                        TimeWorkBack = new DateTime(2021, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                        IsActive = true,
+                        Name = "CONFIGURATION GLOABLE 1",
+                        TimeWorkCome = new DateTime(2021, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                        UpdatedAt = new DateTime(2021, 9, 24, 16, 40, 46, 697, DateTimeKind.Local).AddTicks(1360),
+                        UpdatedBy = "1",
+                        WorkDay = new DateTime(2021, 1, 1, 7, 30, 0, 0, DateTimeKind.Unspecified),
+                    },
+                    new
+                    {
+                        Id = 2,
+                        Code = "GC2",
+                        CreatedAt = new DateTime(2021, 9, 24, 16, 40, 46, 697, DateTimeKind.Local).AddTicks(2409),
+                        CreatedBy = "1",
+                        Description = "CONFIGURATION GLOABLE 2",
+                        TimeWorkBack = new DateTime(2021, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                        IsActive = true,
+                        Name = "CONFIGURATION GLOABLE 2",
+                        TimeWorkCome = new DateTime(2021, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                        UpdatedAt = new DateTime(2021, 9, 24, 16, 40, 46, 697, DateTimeKind.Local).AddTicks(2418),
+                        UpdatedBy = "1",
+                        WorkDay = new DateTime(2021, 1, 1, 7, 30, 0, 0, DateTimeKind.Unspecified),
+                    },
+                    new
+                    {
+                        Id = 3,
+                        Code = "GC3",
+                        CreatedAt = new DateTime(2021, 9, 24, 16, 40, 46, 697, DateTimeKind.Local).AddTicks(2451),
+                        CreatedBy = "1",
+                        Description = "CONFIGURATION GLOABLE 3",
+                        TimeWorkBack = new DateTime(2021, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                        IsActive = true,
+                        Name = "CONFIGURATION GLOABLE 3",
+                        TimeWorkCome = new DateTime(2021, 1, 1, 7, 30, 0, 0, DateTimeKind.Unspecified),
+                        UpdatedAt = new DateTime(2021, 9, 24, 16, 40, 46, 697, DateTimeKind.Local).AddTicks(2453),
+                        UpdatedBy = "1",
+                        WorkDay = new DateTime(2021, 1, 1, 7, 30, 0, 0, DateTimeKind.Unspecified),
+                    });
+            });
+
+
+
             modelBuilder.Entity("PSETIME_BACK.DAL.Models.Entities.UserManager.UserGroups", b =>
                 {
                     b.Property<int>("Id")
