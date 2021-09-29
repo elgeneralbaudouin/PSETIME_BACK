@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs;
 using PSETIME_BACK.BussinessLogic.ImplService.Imports;
+using PSETIME_BACK.BussinessLogic.ImplService.UserManager;
 using PSETIME_BACK.BussinessLogic.IService.GlobalConfigs;
 using PSETIME_BACK.BussinessLogic.IService.Imports;
+using PSETIME_BACK.BussinessLogic.IService.UserManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +22,11 @@ namespace PSETIME_BACK.Configurations
 
             #region Importation
             services.AddScoped<IImportServices, ImportServices>();
+            #endregion
+
+            #region UserManager
+            services.AddScoped<IUsersServices, UsersServices>();
+
             #endregion
             return services;
         }
