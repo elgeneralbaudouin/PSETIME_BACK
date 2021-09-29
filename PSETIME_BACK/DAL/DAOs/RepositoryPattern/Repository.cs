@@ -257,7 +257,7 @@ namespace PSETIME_BACK.DAL.DAOs.RepositoryPattern
             return GetByQuery().ToList<T>();
         }
 
-        public List<T> GetAll(bool active)
+        public virtual List<T> GetAll(bool active)
         {
             return GetByQuery(t => t.IsActive.Equals(active)).ToList<T>();
         }

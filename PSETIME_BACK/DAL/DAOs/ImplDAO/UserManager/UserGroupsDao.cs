@@ -1,5 +1,7 @@
-﻿using PSETIME_BACK.DAL.DAOs.IDAO.UserManager;
+﻿using Microsoft.EntityFrameworkCore;
+using PSETIME_BACK.DAL.DAOs.IDAO.UserManager;
 using PSETIME_BACK.DAL.DAOs.RepositoryPattern;
+using PSETIME_BACK.DAL.Models;
 using PSETIME_BACK.DAL.Models.Entities.UserManager;
 using System;
 using System.Collections.Generic;
@@ -14,5 +16,18 @@ namespace PSETIME_BACK.DAL.DAOs.ImplDAO.UserManager
         {
 
         }
+
+
+        public override List<UserGroups> GetAll(bool active)
+        {
+            using (ApplicationDBContext context = Ctx)
+            {
+                IEnumerable<UserGroups> query = context.UserGroups
+                    .Include(t => t.GlobalConfig)
+                    .Where(t => t.IsActive);
+                return query.ToList();
+            }
+        }
     }
+
 }

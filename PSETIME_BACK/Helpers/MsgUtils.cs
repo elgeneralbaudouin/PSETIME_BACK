@@ -33,6 +33,7 @@ namespace PSETIME_BACK.Helpers
         internal static readonly string FIRST_REMOVE_USER_FROM_ROLE = "server.msg.first_remove_user_from_role";
 
         internal static readonly string BAD_PARAMETERS = "server.msg.bad_parameter";
+        internal static readonly string BAD_PARAMETERS_BEGIN_END_HOURS = "server.msg.bad_parameter_begin_end_hours";
         internal static readonly string REQUIRED_MANDATORIES_PARAMTERS = "server.msg.required_mandatories_params";
         internal static readonly string NOT_REFERENTIAL_DATA_IN = "server.msg.not_referential_data_in";
         internal static readonly string BAD_PASSWORD_PARAMETERS = "server.msg.bad_password_parameter";
