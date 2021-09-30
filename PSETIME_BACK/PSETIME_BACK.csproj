@@ -26,6 +26,13 @@
     <Folder Include="DAL\DAOs\IDAO\UserManager\" />
     <Folder Include="DAL\DAOs\ImplDAO\UserManager\" />
     <Folder Include="DTO\VBM\" />
+
+    <Folder Include="BussinessLogic\ImplService\RevendPerms\" />
+    <Folder Include="BussinessLogic\IService\RevendPerms\" />
+    <Folder Include="Controllers\RevendPerms\" />
+    <Folder Include="DAL\DAOs\IDAO\RevendPerms\" />
+    <Folder Include="DAL\DAOs\ImplDAO\RevendPerms\" />
+    <Folder Include="DAL\Models\Entities\RevendPerms\" />
   </ItemGroup>
 
 

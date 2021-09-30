@@ -1,12 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PSETIME_BACK.DAL.DAOs.IDAO.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.IDAO.Imports;
+
 using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms.Permissions;
 using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms.Revendications;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.Imports.NewFolder;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms.Permissions;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms.Revendications;
+
+using PSETIME_BACK.DAL.DAOs.IDAO.UserManager;
+using PSETIME_BACK.DAL.DAOs.ImplDAO.GlobalConfigs;
+using PSETIME_BACK.DAL.DAOs.ImplDAO.Imports.NewFolder;
+using PSETIME_BACK.DAL.DAOs.ImplDAO.UserManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +42,15 @@ namespace PSETIME_BACK.Configurations
             services.AddScoped<IPermissionUserDao, PermissionUserDao>();
             services.AddScoped<IRevendicationUserDao, RevendicationUserDao>();
             #endregion
+            #region UserManager
+            services.AddScoped<IUserGroupsDao, UserGroupsDao>();
+
+            #endregion
+
+            #region RevendPerms
+
+            #endregion
+
             return services;
         }
 
