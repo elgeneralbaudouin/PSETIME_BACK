@@ -2,8 +2,6 @@
 using PSETIME_BACK.DAL.Models.Entities.GlobalConfigs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VM.GlobalConfigs
 {
@@ -26,7 +24,7 @@ namespace PSETIME_BACK.DTO.VM.GlobalConfigs
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public static List<GlobalConfigsVM>  ToVMs(this List<GlobalConfig> entities)
+        public static List<GlobalConfigsVM> ToVMs(this List<GlobalConfig> entities)
         {
             List<GlobalConfigsVM> resps = new List<GlobalConfigsVM>();
             foreach (var item in entities)

@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
 {
@@ -15,7 +12,7 @@ namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
         /// <summary>
         ///     cle etrangere et config de la cle
         /// </summary>
-        
+
         [Column("perm_status_id")]
         [ForeignKey("PermissionsStatus")]
         public Int32 PermissionsStatusId { get; set; }

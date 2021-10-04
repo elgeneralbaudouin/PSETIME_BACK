@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PSETIME_BACK.BussinessLogic.IService.RevendPerms;
 using PSETIME_BACK.DTO.VBM.RevendPerms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.Controllers.RevendPerms
 {
@@ -12,7 +8,7 @@ namespace PSETIME_BACK.Controllers.RevendPerms
     [ApiController]
     public class RevendPermsController : Controller
     {
-        private readonly IRevendPermsServices  _revendPermsServices;
+        private readonly IRevendPermsServices _revendPermsServices;
 
         public RevendPermsController(IRevendPermsServices revendPermsServices)
         {

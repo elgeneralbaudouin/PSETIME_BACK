@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
 {
@@ -12,7 +9,7 @@ namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
     /// les revendications des differents 
     /// utilisateurs de la plateforme
     /// </summary>
-    
+
     [Table("adm_t_reven_user")]
     public class RevendicationUser : BaseEntity
     {

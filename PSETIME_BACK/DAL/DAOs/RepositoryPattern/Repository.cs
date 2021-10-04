@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.DAOs.RepositoryPattern
 {
@@ -130,7 +129,7 @@ namespace PSETIME_BACK.DAL.DAOs.RepositoryPattern
         public System.Collections.Generic.IEnumerable<T> GetByQuery(Expression<Func<T, bool>> query = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
         {
             IQueryable<T> queryResult = _DbSet;
-            
+
             //If there is a query, execute it against the dbset
             if (query != null)
             {

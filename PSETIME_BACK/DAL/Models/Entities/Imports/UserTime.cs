@@ -1,10 +1,5 @@
-﻿using Newtonsoft.Json;
-using PSETIME_BACK.DAL.Models.Entities.UserManager;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.Models.Entities.UserTimeImport
 {

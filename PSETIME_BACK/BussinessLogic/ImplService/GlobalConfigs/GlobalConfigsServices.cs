@@ -1,13 +1,10 @@
 ﻿using PSETIME_BACK.BussinessLogic.IService.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.IDAO.GlobalConfigs;
-using PSETIME_BACK.DAL.Models.Entities.GlobalConfigs;
 using PSETIME_BACK.DTO.VM;
 using PSETIME_BACK.DTO.VM.GlobalConfigs;
 using PSETIME_BACK.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs
 {
@@ -24,7 +21,7 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs
             _globalConfigsDao = globalConfigsDao;
         }
 
-        public Response<List<GlobalConfigsVM>> GetAll (bool IsActive = true) 
+        public Response<List<GlobalConfigsVM>> GetAll(bool IsActive = true)
         {
             String message = MsgUtils.OK;
             String stackTrace = String.Empty;
@@ -58,7 +55,7 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs
 
             }
 
-            return new Response<List<GlobalConfigsVM>>() {  Data = respVm, Total = total, Success = message.Equals(MsgUtils.OK), Message = MsgUtils.OK, StackTrace = stackTrace };
+            return new Response<List<GlobalConfigsVM>>() { Data = respVm, Total = total, Success = message.Equals(MsgUtils.OK), Message = MsgUtils.OK, StackTrace = stackTrace };
         }
     }
 }

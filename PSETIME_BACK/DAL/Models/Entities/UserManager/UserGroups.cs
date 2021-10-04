@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PSETIME_BACK.DAL.Models.Entities.GlobalConfigs;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.Models.Entities.UserManager
 {

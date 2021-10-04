@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VM
 {
@@ -18,15 +15,15 @@ namespace PSETIME_BACK.DTO.VM
 
         [JsonProperty("name")]
         [MaxLength(100)]
-        public virtual String  Name { get; set; }
+        public virtual String Name { get; set; }
 
         [JsonProperty("code")]
         [MaxLength(100)]
-        public virtual String  Code { get; set; }
+        public virtual String Code { get; set; }
 
         [JsonProperty("description")]
         [MaxLength(100)]
-        public virtual String  Description { get; set; }
+        public virtual String Description { get; set; }
 
     }
 }

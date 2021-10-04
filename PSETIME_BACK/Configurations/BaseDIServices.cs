@@ -2,17 +2,11 @@
 using PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs;
 using PSETIME_BACK.BussinessLogic.ImplService.Imports;
 using PSETIME_BACK.BussinessLogic.ImplService.RevendPerms;
-using PSETIME_BACK.BussinessLogic.ImplService.RevendPerms;
+using PSETIME_BACK.BussinessLogic.ImplService.UserManager;
 using PSETIME_BACK.BussinessLogic.IService.GlobalConfigs;
 using PSETIME_BACK.BussinessLogic.IService.Imports;
 using PSETIME_BACK.BussinessLogic.IService.RevendPerms;
-using PSETIME_BACK.BussinessLogic.IService.RevendPerms;
-using PSETIME_BACK.BussinessLogic.ImplService.UserManager;
 using PSETIME_BACK.BussinessLogic.IService.UserManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.Configurations
 {
@@ -32,7 +26,7 @@ namespace PSETIME_BACK.Configurations
             #region permission and revendication 
 
             services.AddScoped<IRevendPermsServices, RevendPermsServices>();
-            
+
 
             #endregion
             #region UserManager

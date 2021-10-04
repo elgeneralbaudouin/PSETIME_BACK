@@ -7,8 +7,6 @@ using PSETIME_BACK.DTO.VM.UserManager;
 using PSETIME_BACK.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Transactions;
 
 namespace PSETIME_BACK.BussinessLogic.ImplService.UserManager
@@ -79,7 +77,7 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.UserManager
             return new Response<String>() { Data = message, Total = 1, Success = message.Equals(MsgUtils.OK), Message = message, StackTrace = stackTrace };
         }
 
-        public Response<List<UserGroupsVM>> GetAllGroups(bool IsActive= true)
+        public Response<List<UserGroupsVM>> GetAllGroups(bool IsActive = true)
         {
             String message = MsgUtils.OK;
             String stackTrace = String.Empty;

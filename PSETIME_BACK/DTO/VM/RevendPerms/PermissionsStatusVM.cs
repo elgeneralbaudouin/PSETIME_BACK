@@ -3,14 +3,12 @@ using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VM.RevendPerms
 {
     public class PermissionsStatusVM : BaseVM<int>
     {
-      
+
         public DateTime ResponseDate { get; set; }
 
         [MaxLength(300)]

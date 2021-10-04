@@ -1,10 +1,7 @@
 ﻿using PSETIME_BACK.BussinessLogic.IService.Imports;
 using PSETIME_BACK.DAL.DAOs.IDAO.Imports;
 using PSETIME_BACK.DAL.Models.Entities.UserTimeImport;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.BussinessLogic.ImplService.Imports
 {
@@ -27,7 +24,7 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.Imports
         /// </summary>
         /// <param name="IsActive">if entry is in good state</param>
         /// <returns></returns>
-        public List<UserTime> GetAll (bool IsActive = true) 
+        public List<UserTime> GetAll(bool IsActive = true)
         {
             var response = _importationDao.GetAll(IsActive);
             return response;

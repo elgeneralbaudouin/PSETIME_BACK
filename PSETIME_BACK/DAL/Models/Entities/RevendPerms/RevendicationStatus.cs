@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
 {
@@ -18,7 +15,7 @@ namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
     [Table("adm_t_reven_atatut")]
     public class RevendicationStatus : BaseEntity
     {
-        
+
 
         [Column("etat_reven")]
         [MaxLength(100)]

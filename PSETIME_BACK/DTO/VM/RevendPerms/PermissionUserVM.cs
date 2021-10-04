@@ -1,10 +1,7 @@
-﻿using Newtonsoft.Json;
-using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
+﻿using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VM.RevendPerms
 {
@@ -22,9 +19,9 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public static PermissionUserVM ToVM (this PermissionUser entity)
+        public static PermissionUserVM ToVM(this PermissionUser entity)
         {
-          
+
 
             var model = new PermissionUserVM()
             {

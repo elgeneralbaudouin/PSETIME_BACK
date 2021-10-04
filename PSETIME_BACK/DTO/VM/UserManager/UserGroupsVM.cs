@@ -1,8 +1,6 @@
 ﻿using PSETIME_BACK.DAL.Models.Entities.UserManager;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VM.UserManager
 {
@@ -14,7 +12,7 @@ namespace PSETIME_BACK.DTO.VM.UserManager
 
     public static class GroupsExtention
     {
-        public static UserGroupsVM ToVM (this UserGroups entity)
+        public static UserGroupsVM ToVM(this UserGroups entity)
         {
             var model = new UserGroupsVM()
             {

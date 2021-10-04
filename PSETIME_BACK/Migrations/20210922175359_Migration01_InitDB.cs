@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using System;
 
 namespace PSETIME_BACK.Migrations
 {
@@ -64,9 +64,9 @@ namespace PSETIME_BACK.Migrations
                 unique: true);
 
             ///les lignes du haut devra etre ajouter apres la creation des utilisateurs
-            
+
             ///Migration pour la table horaire 
-            
+
             migrationBuilder.CreateTable(
              name: "ImportTimeUser",
              columns: table => new

@@ -104,7 +104,7 @@ namespace PSETIME_BACK.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_GlobalConfigs",
-                table: "GlobalConfigs", 
+                table: "GlobalConfigs",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(

@@ -6,9 +6,6 @@ using PSETIME_BACK.DTO.VM.RevendPerms;
 using PSETIME_BACK.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Transactions;
 
 namespace PSETIME_BACK.BussinessLogic.ImplService.RevendPerms
 {
@@ -92,14 +89,14 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.RevendPerms
 
                 var permStatus = _permissionsStatusDao.GetById(model.PermissionsStatusId);
 
-                    if (permStatus == null)
-                    {
-                        return new Response<string>() { Message = MsgUtils.BAD_PARAMETERS, Success = false };
-                    }
+                if (permStatus == null)
+                {
+                    return new Response<string>() { Message = MsgUtils.BAD_PARAMETERS, Success = false };
+                }
 
-                    var perm = model.ToEntity(permStatus.Id);
-                    perm.BaseCreate("1", true);
-                    _permissionUserDao.Insert(perm);
+                var perm = model.ToEntity(permStatus.Id);
+                perm.BaseCreate("1", true);
+                _permissionUserDao.Insert(perm);
 
             }
             catch (Exception e)
@@ -224,15 +221,15 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.RevendPerms
             try
             {
 
-               
-                    if (model.Name == null)
-                    {
-                        return new Response<string>() { Message = MsgUtils.BAD_PARAMETERS, Success = false };
-                    }
 
-                    var revend = model.ToEntity();
-                    revend.BaseCreate("1", true);
-                    _revendicationUsersDao.Insert(revend);
+                if (model.Name == null)
+                {
+                    return new Response<string>() { Message = MsgUtils.BAD_PARAMETERS, Success = false };
+                }
+
+                var revend = model.ToEntity();
+                revend.BaseCreate("1", true);
+                _revendicationUsersDao.Insert(revend);
 
             }
             catch (Exception e)

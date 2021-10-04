@@ -1,9 +1,6 @@
 ﻿using PSETIME_BACK.DAL.Models.Entities.GlobalConfigs;
 using PSETIME_BACK.DAL.Models.Entities.UserManager;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VBM.UserManager
 {
@@ -41,7 +38,7 @@ namespace PSETIME_BACK.DTO.VBM.UserManager
         /// <param name="model"></param>
         /// <param name="GlobalConfigId"></param>
         /// <returns></returns>
-        public static UserGroups ToEntity (this GroupsVbm model, int GlobalConfigId)
+        public static UserGroups ToEntity(this GroupsVbm model, int GlobalConfigId)
         {
             var entity = new UserGroups()
             {

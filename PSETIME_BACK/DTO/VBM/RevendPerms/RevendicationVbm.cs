@@ -1,9 +1,6 @@
 ﻿using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PSETIME_BACK.DTO.VBM.RevendPerms
 {
@@ -40,7 +37,7 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
         /// <param name="model"></param>
         /// <param name="RevendicationStatusId"></param>
         /// <returns></returns>
-        public static RevendicationUser ToEntity(this RevendicationVbm model, int  StatusId)
+        public static RevendicationUser ToEntity(this RevendicationVbm model, int StatusId)
         {
             var entity = new RevendicationUser()
             {
