@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,9 +27,10 @@ namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions
         public DateTime ResponseDate { get; set; }
 
         [Column("reponse")]
+        [MaxLength(300)]
         public String Response { get; set; }
 
         [JsonIgnore]
-        public virtual PermissionStatus PermissionsStatus { get; set; }
+        public virtual PermissionsStatus PermissionsStatus { get; set; }
     }
 }

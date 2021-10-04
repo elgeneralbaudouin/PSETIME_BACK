@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK.BussinessLogic.IService.RevendPerms.Revendications
 {
-    public interface IRevendicationUsersServices
+    public interface IRevendicationStatusServices
     {
-        Response<List<RevendicationUserVM>> GetAll(bool IsActive = true);
+        Response<List<RevendicationStatusVM>> GetAll(bool IsActive = true);
     }
 }

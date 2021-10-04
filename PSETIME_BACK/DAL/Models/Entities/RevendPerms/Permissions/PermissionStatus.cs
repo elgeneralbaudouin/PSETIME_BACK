@@ -15,13 +15,12 @@ namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions
     /// </summary>
 
     [Table("adm_t_permis_status")]
-    public class PermissionStatus : BaseEntity
+    public class PermissionsStatus : BaseEntity
     {
         [Column("etat_permis")]
         public override String Name { get; set; }
 
         [JsonIgnore]
         public virtual PermissionUser PermissionUser { get; set; }
-
     }
 }

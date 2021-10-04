@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using PSETIME_BACK.DAL.Models.Entities.GlobalConfigs;
+using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions;
 using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Revendications;
 using PSETIME_BACK.DAL.Models.Entities.UserManager;
 using PSETIME_BACK.DAL.Models.Entities.UserTimeImport;
@@ -30,6 +31,12 @@ namespace PSETIME_BACK.DAL.Models
         public DbSet<RevendicationStatus> RevendicationStatus { get; set; }
         #endregion
 
+        #region permissions
+        public DbSet<PermissionUser> PermissionUser { get; set; }
+
+        public DbSet<PermissionsStatus> PermissionsStatus { get; set; }
+        #endregion
+
         #region Configuration
         public DbSet<GlobalConfig> GlobalConfigs { get; set; }
         #endregion
@@ -37,6 +44,7 @@ namespace PSETIME_BACK.DAL.Models
 
         #region Importation
         public DbSet<UserTime> ImportTimeUsers { get; set; }
+        public object RevendicationUser { get; internal set; }
 
         #endregion
 

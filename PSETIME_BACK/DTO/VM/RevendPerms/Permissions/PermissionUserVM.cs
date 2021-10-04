@@ -2,6 +2,7 @@
 using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,14 +10,9 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms
 {
     public class PermissionUserVM : BaseVM<int>
     {
-        [JsonProperty("date_demande")]
-        public DateTime RequestDate { get; set; }
 
-        [JsonProperty("date_reponse")]
-        public DateTime ResponseDate { get; set; }
-
-        [JsonProperty("reponse")]
-        public String Response { get; set; }
+        [MaxLength(300)]
+        public String Name { get; set; }
     }
 
     public static class PermissionUserExtention
@@ -25,6 +21,30 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms
         ///     serialize list of objects
         /// </summary>
         /// <param name="entities"></param>
+        /// <returns></returns>
+        public static PermissionUserVM ToVM (this PermissionUser entity)
+        {
+          
+
+            var model = new PermissionUserVM()
+            {
+                Name = entity.Name,
+                Code = entity.Code,
+                Description = entity.Description,
+                Id = entity.Id
+            };
+
+            if (entity.PermissionsStatus != null)
+            {
+                model.Name = entity.PermissionsStatus.Name;
+            }
+            return model;
+        }
+
+        /// <summary>
+        ///     serialize one object
+        /// </summary>
+        /// <param name="entity"></param>
         /// <returns></returns>
         public static List<PermissionUserVM> ToVMs(this List<PermissionUser> entities)
         {
@@ -35,27 +55,6 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms
             }
 
             return resps;
-        }
-
-        /// <summary>
-        ///     serialize one object
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public static PermissionUserVM ToVM(this PermissionUser entity)
-        {
-            // construction
-            var model = new PermissionUserVM()
-            {
-                Id = entity.Id,
-                Code = entity.Code,
-                Description = entity.Description,
-                RequestDate = entity.RequestDate,
-                ResponseDate = entity.ResponseDate,
-                Response = entity.Response
-            };
-
-            return model;
         }
 
     }

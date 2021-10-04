@@ -10,31 +10,31 @@ using System.Threading.Tasks;
 
 namespace PSETIME_BACK.BussinessLogic.ImplService.RevendPerms.Revendications
 {
-    public class RevendicationUsersServices : IRevendicationUsersServices
+    public class RevendicationStatusServices : IRevendicationStatusServices
     {
 
         // DI
-        private readonly IRevendicationUserDao _revendicationUsersDao;
+        private readonly IRevendicationStatusDao _revendicationStatusDao;
 
-        public RevendicationUsersServices(IRevendicationUserDao revendicationUsersDao)
+        public RevendicationStatusServices(IRevendicationStatusDao revendicationStatusDao)
         {
-            _revendicationUsersDao = revendicationUsersDao;
+            _revendicationStatusDao = revendicationStatusDao;
         }
 
-        public Response<List<RevendicationUserVM>> GetAll(bool IsActive = true)
+        public Response<List<RevendicationStatusVM>> GetAll(bool IsActive = true)
         {
             String message = MsgUtils.OK;
             String stackTrace = String.Empty;
             Int32 total = 0;
 
-            var respVm = new List<RevendicationUserVM>();
+            var respVm = new List<RevendicationStatusVM>();
 
             try
             {
-                var resp = _revendicationUsersDao.GetAll(IsActive);
+                var resp = _revendicationStatusDao.GetAll(IsActive);
                 if (resp == null)
                 {
-                    return new Response<List<RevendicationUserVM>>()
+                    return new Response<List<RevendicationStatusVM>>()
                     {
                         Success = true,
                         Message = MsgUtils.NO_DATA
@@ -55,7 +55,9 @@ namespace PSETIME_BACK.BussinessLogic.ImplService.RevendPerms.Revendications
 
             }
 
-            return new Response<List<RevendicationUserVM>>() { Data = respVm, Total = total, Success = message.Equals(MsgUtils.OK), Message = MsgUtils.OK, StackTrace = stackTrace };
+            return new Response<List<RevendicationStatusVM>>() { Data = respVm, Total = total, Success = message.Equals(MsgUtils.OK), Message = MsgUtils.OK, StackTrace = stackTrace };
         }
+
+
     }
 }

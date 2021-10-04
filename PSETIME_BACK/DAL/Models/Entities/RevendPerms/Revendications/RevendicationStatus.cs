@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms.Revendications
         
 
         [Column("etat_reven")]
+        [MaxLength(100)]
         public override String Name { get; set; }
 
         [JsonIgnore]
