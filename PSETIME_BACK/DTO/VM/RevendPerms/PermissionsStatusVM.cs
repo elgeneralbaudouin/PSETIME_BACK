@@ -1,26 +1,24 @@
 ﻿using Newtonsoft.Json;
-using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Revendications;
+using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PSETIME_BACK.DTO.VM.RevendPerms.Revendications
+namespace PSETIME_BACK.DTO.VM.RevendPerms
 {
-    public class RevendicationStatusVM : BaseVM<int>
+    public class PermissionsStatusVM : BaseVM<int>
     {
-
+      
         public DateTime ResponseDate { get; set; }
 
         [MaxLength(300)]
         [JsonProperty("etat")]
         public String Name { get; set; }
-
     }
 
-
-    public static class RevendicationStatusExtention
+    public static class PermissionsStatusExtention
     {
 
         /// <summary>
@@ -28,9 +26,9 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms.Revendications
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public static List<RevendicationStatusVM> ToVMs(this List<RevendicationStatus> entities)
+        public static List<PermissionsStatusVM> ToVMs(this List<PermissionsStatus> entities)
         {
-            List<RevendicationStatusVM> resps = new List<RevendicationStatusVM>();
+            List<PermissionsStatusVM> resps = new List<PermissionsStatusVM>();
             foreach (var item in entities)
             {
                 resps.Add(item.ToVM());
@@ -44,10 +42,10 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms.Revendications
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public static RevendicationStatusVM ToVM(this RevendicationStatus entity)
+        public static PermissionsStatusVM ToVM(this PermissionsStatus entity)
         {
             // construction
-            var model = new RevendicationStatusVM()
+            var model = new PermissionsStatusVM()
             {
                 Id = entity.Id,
                 Code = entity.Code,

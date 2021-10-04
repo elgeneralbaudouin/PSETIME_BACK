@@ -9,12 +9,10 @@ namespace PSETIME_BACK.DTO.VBM
 {
     public class BaseVbm
     {
-        //[JsonProperty("name")]
 
         [MaxLength(100)]
         public virtual String Name { get; set; }
 
-        //[JsonProperty("description")]
         [MaxLength(100)]
         public virtual String Description { get; set; }
     }

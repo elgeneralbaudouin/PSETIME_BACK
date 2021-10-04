@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20211004113312_Migration03_createrevendpermsmodule.cs" />
+    <Compile Remove="Migrations\20211004113312_Migration03_createrevendpermsmodule.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.19" />
@@ -25,7 +30,6 @@
     <Folder Include="Controllers\UserManager\" />
     <Folder Include="DAL\DAOs\IDAO\UserManager\" />
     <Folder Include="DAL\DAOs\ImplDAO\UserManager\" />
-    <Folder Include="DAL\Models\Entities\RevendPerms\" />
   </ItemGroup>
 
   <ItemGroup>

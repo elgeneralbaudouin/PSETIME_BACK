@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms.Permissions;
+using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms;
 using PSETIME_BACK.DAL.DAOs.RepositoryPattern;
 using PSETIME_BACK.DAL.Models;
-using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions;
+using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms.Permissions
+namespace PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms
 {
     public class PermissionUserDao : Repository<PermissionUser>, IPermissionUserDao
     {
@@ -26,7 +26,7 @@ namespace PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms.Permissions
 
             using (ApplicationDBContext context = Ctx)
             {
-                IEnumerable<PermissionUser> query = context.PermissionUser
+                IEnumerable<PermissionUser> query = context.PermissionUsers
                     .Include(t => t.PermissionsStatus)
                     .Where(t => t.IsActive);
                 return query.ToList();

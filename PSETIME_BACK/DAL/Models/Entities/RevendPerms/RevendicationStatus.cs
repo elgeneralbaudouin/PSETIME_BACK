@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms.Revendications
+namespace PSETIME_BACK.DAL.Models.Entities.RevendPerms
 {
 
     /// <summary>

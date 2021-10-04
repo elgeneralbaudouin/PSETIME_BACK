@@ -1,24 +1,26 @@
 ﻿using Newtonsoft.Json;
-using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions;
+using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PSETIME_BACK.DTO.VM.RevendPerms.Permissions
+namespace PSETIME_BACK.DTO.VM.RevendPerms
 {
-    public class PermissionsStatusVM : BaseVM<int>
+    public class RevendicationStatusVM : BaseVM<int>
     {
-      
+
         public DateTime ResponseDate { get; set; }
 
         [MaxLength(300)]
         [JsonProperty("etat")]
         public String Name { get; set; }
+
     }
 
-    public static class PermissionsStatusExtention
+
+    public static class RevendicationStatusExtention
     {
 
         /// <summary>
@@ -26,9 +28,9 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms.Permissions
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public static List<PermissionsStatusVM> ToVMs(this List<PermissionsStatus> entities)
+        public static List<RevendicationStatusVM> ToVMs(this List<RevendicationStatus> entities)
         {
-            List<PermissionsStatusVM> resps = new List<PermissionsStatusVM>();
+            List<RevendicationStatusVM> resps = new List<RevendicationStatusVM>();
             foreach (var item in entities)
             {
                 resps.Add(item.ToVM());
@@ -42,10 +44,10 @@ namespace PSETIME_BACK.DTO.VM.RevendPerms.Permissions
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public static PermissionsStatusVM ToVM(this PermissionsStatus entity)
+        public static RevendicationStatusVM ToVM(this RevendicationStatus entity)
         {
             // construction
-            var model = new PermissionsStatusVM()
+            var model = new RevendicationStatusVM()
             {
                 Id = entity.Id,
                 Code = entity.Code,

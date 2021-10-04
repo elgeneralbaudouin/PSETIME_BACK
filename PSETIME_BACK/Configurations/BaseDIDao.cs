@@ -2,12 +2,12 @@
 using PSETIME_BACK.DAL.DAOs.IDAO.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.IDAO.Imports;
 
-using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms.Permissions;
-using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms.Revendications;
+using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms;
+using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.Imports.NewFolder;
-using PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms.Permissions;
-using PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms.Revendications;
+using PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms;
+using PSETIME_BACK.DAL.DAOs.ImplDAO.RevendPerms;
 
 using PSETIME_BACK.DAL.DAOs.IDAO.UserManager;
 using PSETIME_BACK.DAL.DAOs.ImplDAO.UserManager;
@@ -38,8 +38,11 @@ namespace PSETIME_BACK.Configurations
             #region permission and revendication 
 
             services.AddScoped<IPermissionUserDao, PermissionUserDao>();
+            services.AddScoped<IPermissionsStatusDao, PermissionsStatusDao>();
             services.AddScoped<IRevendicationUserDao, RevendicationUserDao>();
+            services.AddScoped<IRevendicationStatusDao, RevendicationStatusDao>();
             #endregion
+
             #region UserManager
             services.AddScoped<IUserGroupsDao, UserGroupsDao>();
 

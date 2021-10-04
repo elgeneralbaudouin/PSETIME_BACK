@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PSETIME_BACK.BussinessLogic.ImplService.GlobalConfigs;
 using PSETIME_BACK.BussinessLogic.ImplService.Imports;
-using PSETIME_BACK.BussinessLogic.ImplService.RevendPerms.Permissions;
-using PSETIME_BACK.BussinessLogic.ImplService.RevendPerms.Revendications;
+using PSETIME_BACK.BussinessLogic.ImplService.RevendPerms;
+using PSETIME_BACK.BussinessLogic.ImplService.RevendPerms;
 using PSETIME_BACK.BussinessLogic.IService.GlobalConfigs;
 using PSETIME_BACK.BussinessLogic.IService.Imports;
-using PSETIME_BACK.BussinessLogic.IService.RevendPerms.Permissions;
-using PSETIME_BACK.BussinessLogic.IService.RevendPerms.Revendications;
+using PSETIME_BACK.BussinessLogic.IService.RevendPerms;
+using PSETIME_BACK.BussinessLogic.IService.RevendPerms;
 using PSETIME_BACK.BussinessLogic.ImplService.UserManager;
 using PSETIME_BACK.BussinessLogic.IService.UserManager;
 using System;
@@ -31,9 +31,7 @@ namespace PSETIME_BACK.Configurations
 
             #region permission and revendication 
 
-            services.AddScoped<IPermissionUserServices, PermissionUserServices>();
-
-            services.AddScoped<IRevendicationUserServices, RevendicationUserServices>();
+            services.AddScoped<IRevendPermsServices, RevendPermsServices>();
             
 
             #endregion

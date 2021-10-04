@@ -1,4 +1,5 @@
-﻿using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Permissions;
+﻿using Newtonsoft.Json;
+using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,15 +10,22 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
 {
     public class PermissionVbm : BaseVbm
     {
+        [JsonProperty("permission_status_id")]
+        public int PermissionsStatusId { get; set; }
 
         [MaxLength(300)]
-        public String Name { get; set; }
+        [JsonProperty("name")]
+        public override String Name { get; set; }
+
+        [MaxLength(500)]
+        [JsonProperty("object")]
+        public override String Description { get; set; }
     }
 
     public static class PermissionExtention
     {
         /// <summary>
-        ///     use to bind config class instance
+        ///     use to bind permission class instance
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -26,11 +34,8 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
         {
             var entity = new PermissionsStatus()
             {
-              //  RequestDate = model.RequestDate,
-              //  ResponseDate = model.ResponseDate,
-              //  Response = model.Response,
                 Name = model.Name,
-                Code = model.Name,
+                Code = model.Name.ToUpper(),
                 Description = model.Description,
             };
 
@@ -49,7 +54,7 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
             {
                 PermissionsStatusId = PermissionsStatusId,
                 Name = model.Name,
-                Code = model.Name,
+                Code = model.Name.ToUpper(),
                 Description = model.Description,
             };
 

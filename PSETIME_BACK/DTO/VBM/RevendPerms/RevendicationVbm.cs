@@ -1,4 +1,4 @@
-﻿using PSETIME_BACK.DAL.Models.Entities.RevendPerms.Revendications;
+﻿using PSETIME_BACK.DAL.Models.Entities.RevendPerms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +10,7 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
     public class RevendicationVbm : BaseVbm
     {
         [MaxLength(300)]
-        public String Name { get; set; }
+        public override String Name { get; set; }
 
     }
 
@@ -22,13 +22,10 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
         /// <param name="model"></param>
         /// <returns></returns>
 
-        public static RevendicationStatus ToEntity(this RevendicationVbm model)
+        public static RevendicationUser ToEntity(this RevendicationVbm model)
         {
-            var entity = new RevendicationStatus()
+            var entity = new RevendicationUser()
             {
-                //  RequestDate = model.RequestDate,
-                //  ResponseDate = model.ResponseDate,
-                //  Response = model.Response,
                 Name = model.Name,
                 Code = model.Name,
                 Description = model.Description,
@@ -43,11 +40,11 @@ namespace PSETIME_BACK.DTO.VBM.RevendPerms
         /// <param name="model"></param>
         /// <param name="RevendicationStatusId"></param>
         /// <returns></returns>
-        public static RevendicationUser ToEntity(this RevendicationVbm model, int RevendicationStatusId)
+        public static RevendicationUser ToEntity(this RevendicationVbm model, int  StatusId)
         {
             var entity = new RevendicationUser()
             {
-                RevendicationStatusId = RevendicationStatusId,
+                RevendicationStatusId = StatusId,
                 Name = model.Name,
                 Code = model.Name,
                 Description = model.Description,
