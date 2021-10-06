@@ -66,6 +66,23 @@ namespace PSETIME_BACK.DAL.Models
                 new GlobalConfig { Id = 2, Code = "GC2", Description = "CONFIGURATION GLOABLE 2", Name = "CONFIGURATION GLOABLE 2", StartDate = new DateTime(2021, 01, 01, 8, 0, 0), EndDate = new DateTime(2021, 01, 01, 18, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
                 new GlobalConfig { Id = 3, Code = "GC3", Description = "CONFIGURATION GLOABLE 3", Name = "CONFIGURATION GLOABLE 3", StartDate = new DateTime(2021, 01, 01, 7, 30, 0), EndDate = new DateTime(2021, 01, 01, 18, 0, 0), IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" }
                 );
+
+
+
+            modelBuilder.Entity<PermissionsStatus>().HasData(
+                new PermissionsStatus { Id = 1, Code = "PENDING", Description = "PERMISSION ON PENDING FOR TRAITEMENT", Name = "PENDING", IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
+                new PermissionsStatus { Id = 2, Code = "ACCEPTED", Description = "PERMISSION ACCEPTED", Name = "ACCEPTED",  IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
+                new PermissionsStatus { Id = 3, Code = "REJECTED", Description = "PERMISSION REJECTED", Name = "REJECTED", IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" }
+                );
+
+
+
+            modelBuilder.Entity<RevendicationStatus>().HasData(
+                new RevendicationStatus { Id = 1, Code = "PENDING", Description = "REVENDICATION ON PENDING FOR TRAITEMENT", Name = "PENDING", IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
+                new RevendicationStatus { Id = 2, Code = "ACCEPTED", Description = "REVENDICATION ACCEPTED", Name = "ACCEPTED", IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" },
+                new RevendicationStatus { Id = 3, Code = "REJECTED", Description = "REVENDICATION REJECTED", Name = "REJECTED", IsActive = true, CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now, CreatedBy = "1", UpdatedBy = "1" }
+                );
+
         }
 
 

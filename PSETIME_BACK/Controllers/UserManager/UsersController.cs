@@ -33,6 +33,21 @@ namespace PSETIME_BACK.Controllers.UserManager
             return Ok(result);
         }
 
+        [HttpPut("update/group")]
+        public ActionResult UpdateGroup(GroupsVbm model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+            var result = _usersServices.UpdateGroups(model);
+            if (!result.Success)
+            {
+                return StatusCode(500, result.Message);
+            }
+            return Ok(result);
+        }
+
         [HttpGet("getall")]
         public ActionResult GetAllConfigs(bool IsActive = true)
         {

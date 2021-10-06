@@ -6,6 +6,7 @@ namespace PSETIME_BACK.DTO.VBM.UserManager
 {
     public class GroupsVbm : BaseVbm
     {
+        public int Id { get; set; }
         public DateTime StardDate { get; set; }
         public DateTime EndDate { get; set; }
     }
