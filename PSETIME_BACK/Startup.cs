@@ -1,12 +1,17 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PSETIME_BACK.Configurations;
 using PSETIME_BACK.DAL.Models;
+using PSETIME_BACK.DAL.Models.Entities.UserManager;
 using System;
+using System.Text;
 
 namespace PSETIME_BACK
 {
@@ -28,6 +33,36 @@ namespace PSETIME_BACK
             services.AddDbContext<ApplicationDBContext>();
             services.AddBaseDAO();
             services.AddBaseServices();
+
+            // identity configuration
+            services.AddIdentity<Users, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequiredLength = 5;
+            })
+           .AddDefaultTokenProviders();
+
+            services.AddAuthentication(auth =>
+            {
+                auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["AuthSettings:Audience"],
+                    ValidIssuer = Configuration["AuthSettings:Issuer"],
+                    RequireExpirationTime = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["AuthSettings:Key"])),
+                    ValidateIssuerSigningKey = true
+                };
+            });
+
 
             services.AddControllers();
 

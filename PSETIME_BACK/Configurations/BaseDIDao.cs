@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PSETIME_BACK.BussinessLogic.ImplService.UserManager;
 using PSETIME_BACK.DAL.DAOs.IDAO.GlobalConfigs;
 using PSETIME_BACK.DAL.DAOs.IDAO.Imports;
 using PSETIME_BACK.DAL.DAOs.IDAO.RevendPerms;
@@ -37,6 +38,8 @@ namespace PSETIME_BACK.Configurations
 
             #region UserManager
             services.AddScoped<IUserGroupsDao, UserGroupsDao>();
+            services.AddScoped<IClaimsDao, ClaimsDao>();
+            services.AddScoped<IUserSessionDao, UserSessionDao>();
 
             #endregion
 

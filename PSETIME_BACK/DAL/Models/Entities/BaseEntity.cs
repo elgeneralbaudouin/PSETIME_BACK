@@ -8,7 +8,7 @@ namespace PSETIME_BACK.DAL.Models.Entities
     /// <summary>
     ///  Classe de base de tou(te)s les classes entités du modele de la base de donnée
     /// </summary>
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
